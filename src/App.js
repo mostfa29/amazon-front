@@ -1,4 +1,5 @@
 import './App.css';
+import DropdownMenu from './components/Elems/DropdownMenu';
 import MenuItem from './components/header/menuItem/MenuItem';
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
     <div className="app">
 
       <MenuItem>
-        <p style={{ margin: 0 }}>test</p>
+        <DropdownMenu>test</DropdownMenu>
       </MenuItem>
 
     </div>

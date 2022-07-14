@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { useLayoutEffect, useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
+import { Elem } from './style'
 
-import { Margin } from '@mui/icons-material';
 
 
 function MenuItem(props) {
@@ -30,7 +30,7 @@ function MenuItem(props) {
         console.log(`width:${width}/height:${height}`)
 
 
-    }, [hover])
+    })
 
 
 
@@ -78,7 +78,8 @@ MenuItem.propTypes = {
     p: PropTypes.number,
     pu: PropTypes.string,
     br_w: PropTypes.string,
-    br_c: PropTypes.string
+    br_c: PropTypes.string,
+    link: PropTypes.string
 };
 export default MenuItem
 const Container = styled.div`
@@ -93,11 +94,9 @@ justify-content: center;
 &:hover{
     cursor:pointer;
      border:${props => (props.br_w ? props.br_w : '1px ') + 'solid ' + (props.br_c ? props.br_c : ' white')};
+     transition-duration: 0.5s;
 
 }
 `
 
 
-const Elem = styled.div`
-display:block
-`
