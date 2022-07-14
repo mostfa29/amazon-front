@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import { useLayoutEffect, useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
+
 import { Margin } from '@mui/icons-material';
 
 
@@ -49,13 +51,14 @@ function MenuItem(props) {
 
     return (
         <Container
+            data-testid='menuitem'
             onMouseEnter={() => MouseEnter()}
             onMouseLeave={() => MouseLeave()}
             //margin is bugy use padding instead
             style={{
                 width: (width > 70) ? width : '70px',
                 height: (height > 45) ? height : '45px',
-                padding: props.p > 0 ? (props.p + props.pu) : '0.1px',
+                padding: (props.p > 0 && props.pu) ? (props.p + props.pu) : '0.1px',
                 margin: '0'
 
 
@@ -71,7 +74,12 @@ function MenuItem(props) {
         </Container>
     )
 }
-
+MenuItem.propTypes = {
+    p: PropTypes.number,
+    pu: PropTypes.string,
+    br_w: PropTypes.string,
+    br_c: PropTypes.string
+};
 export default MenuItem
 const Container = styled.div`
 align-items:center;
@@ -88,6 +96,7 @@ justify-content: center;
 
 }
 `
+
 
 const Elem = styled.div`
 display:block
