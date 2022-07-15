@@ -67,7 +67,7 @@ function MenuItem(props) {
             }}
         >
 
-            <Elem ref={ref}> {props.children}</Elem>
+            <Elem display={props.display} ref={ref}> {props.children}</Elem>
 
 
 

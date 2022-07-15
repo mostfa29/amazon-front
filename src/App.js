@@ -1,14 +1,16 @@
 import './App.css';
-import DropdownMenu from './components/Elems/DropdownMenu';
+import DropdownMenu from './components/dropDownMenu/DropdownMenu';
 import MenuItem from './components/header/menuItem/MenuItem';
+import SearchElem from './components/searchElem/SearchElem';
 
 function App() {
   return (
     <div className="app">
 
-      <MenuItem>
+      {/*      <MenuItem>
         <DropdownMenu>test</DropdownMenu>
-      </MenuItem>
+  </MenuItem>*/}
+      <SearchElem />
 
     </div>
   );
